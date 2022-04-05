@@ -1,0 +1,104 @@
+<script type="text/html" data-template-name="naverencyclopedia">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span
+                data-i18n="node-red:common.label.name"></span></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]node-red:common.label.name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-creds"> <i class="fa fa-key fa-fw"></i> API key</span></label>
+        <input type="text" id="node-input-creds">
+    </div>
+    <div class="form-row"><label for="node-input-query"><i class="fa"></i> query</label> <input type="text"
+                                                                                                id="node-input-query"
+                                                                                                placeholder="query">
+    </div>
+    <div class="form-row"><label for="node-input-display"><i class="fa"></i> display</label> <input type="text"
+                                                                                                    id="node-input-display"
+                                                                                                    placeholder="display">
+    </div>
+    </div>
+    <div class="form-row"><label for="node-input-start"><i class="fa"></i> start</label> <input type="text"
+                                                                                                id="node-input-start"
+                                                                                                placeholder="start">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="naverencyclopedia">
+    <p>Summary of the node.</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload<span class="property-type">object</span></dt>
+        <dd>Explanation of payload.</dd>
+        <dt class="optional">topic <span class="property-type">string</span></dt>
+        <dd>Explanation of topic.</dd>
+    </dl>
+    <h3>Outputs</h3>
+    <dl class="message-properties">
+        <dt>payload<span class="property-type">object</span></dt>
+        <dd>Explanation of payload.</dd>
+        <dt class="optional">topic<span class="property-type">string</span></dt>
+        <dd>Explanation of topic.</dd>
+    </dl>
+    <h3>Details</h3>
+    <p>Explanation of the details.</p>
+    <p><b>Note</b>: Note of the node.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('naverencyclopedia', {
+        color: '#ffffff',
+        category: 'function',
+        defaults: {
+            name: {value: ''},
+            query: {value: "", required: false},
+            display: {value: "", required: false},
+            start: {value: "", required: false},
+            creds: {
+                value: "",
+                type: "naverencyclopediaApiKey"
+            },
+        },
+        inputs: 1,
+        outputs: 1,
+        label: function () {
+            return this.name || 'naver encyclopedia';
+        },
+        icon: 'icon.png',
+        align: 'left'
+    });
+</script>
+
+
+<script type="text/x-red" data-template-name="naverencyclopediaApiKey">
+    <div class="form-row">
+        <label for="node-input-name"> <i class="fa fa-tag fa-fw"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+      <label for="node-config-input-clientId"> Client Id</label>
+      <input type="text" id="node-config-input-clientId" placeholder="Client Id">
+    </div>
+    <div class="form-row">
+      <label for="node-config-input-clientSecret"> Client Secret</label>
+      <input type="text" id="node-config-input-clientSecret" placeholder="Client Secret">
+    </div>
+
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('naverencyclopediaApiKey', {
+        category: 'config',
+        defaults: {
+            name: {value: ""}
+        },
+        credentials: {
+            clientId: {},
+            clientSecret: {},
+        },
+        label: function () {
+            return this.name || 'API Key';
+        }
+    });
+</script>
+

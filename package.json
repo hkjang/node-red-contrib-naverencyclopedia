@@ -1,0 +1,45 @@
+{
+  "name": "node-red-contrib-naverencyclopedia",
+  "version": "1.0.0",
+  "description": "Node-RED node for naverencyclopedia",
+  "main": "node.js",
+  "scripts": {
+    "test": "mocha \"test/**/*_spec.js\" --timeout 3000"
+  },
+  "node-red": {
+    "nodes": {
+      "naverencyclopedia": "node.js"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/hkjang/node-red-contrib-naverencyclopedia/issues"
+  },
+  "homepage": "https://github.com/hkjang/node-red-contrib-naverencyclopedia#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkjang/node-red-contrib-naverencyclopedia.git"
+  },
+  "keywords": [
+    "node-red-contrib-contribgen",
+    "node-red",
+    "naverencyclopedia",
+    "naver encyclopedia",
+    "encyclopedia",
+    "encyclopedia api",
+    "네이버 백과사전",
+    "백과사전",
+    "naver",
+    "encyclopedia"
+  ],
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "files": [
+    "icons/icon.png",
+    "LICENSE",
+    "node.html",
+    "node.js",
+    "README.md"
+  ],
+  "license": "Apache-2.0"
+}
